@@ -1,7 +1,14 @@
+import './App.css';
+import { Searchbar } from "./components/Component1";
+import { Carousel } from "./components/Component2";
+import { Customdropdown } from "./components/Component3";
+
 function App() {
   return (
     <div className="App">
-      <h1>three components</h1>
+      <Searchbar />
+      <Carousel />
+      <Customdropdown />
     </div>
   );
 }
