@@ -1,5 +1,4 @@
 .App{
-  border: 5px solid black;
   width: 99%;
   height: auto;
 }
@@ -23,11 +22,12 @@
   height: 20px;
 }
 .slide{
-  border: 2px solid black;
-  width: 95%;
+  border: 1px solid black;
+  width: 20%;
   height: 250px;
   margin: 0 auto;
   display: flex;
+  overflow-x: scroll;
 }
 .prevbtn{
   cursor: pointer;
