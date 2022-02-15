@@ -3,6 +3,7 @@ import '../App.css'
 
 export const Carousel = () => {
     const [carou, setCarou] = useState([]);
+    const [current, setCurrent] = useState(0);
 
     useEffect(() => {
         fetch(`http://localhost:2342/carousels`)
@@ -16,21 +17,25 @@ export const Carousel = () => {
     const length = carou.length;
 
     const next = () => {
-        setCarou(carou === length - 1 ? 0 : carou + 1)
+        setCurrent(current === length - 1 ? 0 : current + 1)
     }
 
     const prev = () => {
-        setCarou(carou === 0 ? length - 1 : carou - 1)
+        setCurrent(current === 0 ? length - 1 : current - 1)
     }
 
     return (
         <>
             <div className='slide'>
-                {carou.map((e, i) => (
-                    <img key={i} src={`${e.images}`} />
-                ))}
-                {/* <button className='prevbtn'>prev</button> */}
-                {/* <button className='nextbtn'>next</button> */}
+                <button className='prevbtn' onClick={prev}>prev</button>
+                <button className='nextbtn' onClick={next}>next</button>
+                {carou.map((slide, index) => {
+                    return (
+                        <div className={index === current ? 'slideactive' : 'slider'} key={index}>
+                            {index === current && (<img src={slide.images} key={slide.id} alt='img' />)}
+                        </div>
+                    )
+                })}
             </div>
         </>
     )

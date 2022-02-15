@@ -22,20 +22,38 @@
   height: 20px;
 }
 .slide{
-  border: 1px solid black;
-  width: 20%;
-  height: 250px;
+  border: 1px solid blue;
+  border-radius: 4px;
+  width: 50%;
+  height: 230px;
   margin: 0 auto;
-  display: flex;
-  overflow-x: scroll;
+  display: block;
+  align-items: center;
+  justify-content: center;
+}
+
+.slide img{
+  width: 30%;
 }
 .prevbtn{
   cursor: pointer;
   height: 20px;
-  width: 5%;
+  width: 10%;
+  margin-top: 13%;
+  float: left;
 }
 .nextbtn{
   height: 20px;
-  width: 5%;
+  width: 10%;
+  margin-top: 13%;
   cursor: pointer;
+  float: right;
+}
+
+.slider {
+  opacity: 0;
+}
+
+.slideactive {
+  opacity: 1;
 }
