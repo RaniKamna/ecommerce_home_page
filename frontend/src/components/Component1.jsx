@@ -9,7 +9,7 @@ export const Searchbar = () => {
         fetch(`http://localhost:2342/products`)
             .then(x => x.json())
             .then((d) => {
-                //console.log(d.item);
+                console.log(d.item);
                 setData(d.item);
             })
     }, []);
@@ -36,7 +36,8 @@ export const Searchbar = () => {
             {data.length !== 0 && <div className='result'>
                 {data.map((item) => (
                     <div key={item.id}>
-                        <div>
+                        <div style={{display:'flex'}}>
+                            <img src={item.listOfImages[0]} alt="" srcset="" />
                             <p>{item.brandname}</p>
                         </div>
                     </div>

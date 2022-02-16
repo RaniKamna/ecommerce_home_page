@@ -27,8 +27,8 @@ export const Carousel = () => {
     return (
         <>
             <div className='slide'>
-                <button className='prevbtn' onClick={prev}>prev</button>
-                <button className='nextbtn' onClick={next}>next</button>
+                <button className='prevbtn' onClick={prev}>&lt;</button>
+                <button className='nextbtn' onClick={next}>&gt;</button>
                 {carou.map((slide, index) => {
                     return (
                         <div className={index === current ? 'slideactive' : 'slider'} key={index}>
